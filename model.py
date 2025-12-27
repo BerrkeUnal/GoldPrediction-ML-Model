@@ -10,10 +10,11 @@ from sklearn.model_selection import KFold, cross_val_predict
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 import joblib
 
+
 # --- STEP 1: UPLOADING FILE ---
 try:
-    
-    df = pd.read_csv("financial_regression.csv", delimiter=",", encoding='latin1')
+    url = "https://raw.githubusercontent.com/BerrkeUnal/GoldPrediction-ML-Model/main/financial_regression.csv" 
+    df = pd.read_csv(url, delimiter=",", encoding='latin1')
     print("File Uploaded.")
 except FileNotFoundError:
     print("Error: File was not found.")
@@ -223,7 +224,7 @@ ridge_final.fit(X_train, y_train)
 joblib.dump(ridge_final, 'ridge_model.pkl')
 
 # SVM
-svm_final = models["SVR"]
+svm_final = models["SVM"]
 svm_final.fit(X_train, y_train)
 joblib.dump(svm_final, 'svm_model.pkl')
 
