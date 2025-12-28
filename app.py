@@ -273,5 +273,5 @@ with tab2:
             st.markdown("#### 5. Data Distribution")
             hist_col = st.selectbox("Select Feature for Histogram:", ['gold close', 'us_rates_%', 'eur_usd'])
             fig_hist = px.histogram(df, x=hist_col, nbins=50, title=f"Frequency of {hist_col}")
-            fig_hist.update_traces(marker_color='#FFFFFF')
+            fig_hist.update_traces(marker_color='#FF4B4B')
             st.plotly_chart(fig_hist, use_container_width=True)
